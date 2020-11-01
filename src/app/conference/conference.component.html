@@ -1,0 +1,18 @@
+<div class="card" >
+    <!-- <img class="card-img-top" src="https://source.unsplash.com/random/200x200" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <small>{{location}} - {{startingTime.toDateString()}} </small>
+      <small>Starting time: {{startingTime.toTimeString()}} </small>
+      <p class="card-text">{{description}}</p>
+      <p>Seats available: {{availableSeats()}}</p>
+      <a class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-primary m-2" (click)="addParticipant()">+</button>
+      <div *ngIf="passed" class="alert alert-warning" role="alert">
+        Event happened in the past
+      </div>
+      <div [ngSwitch]=>
+
+      </div>
+    </div>
+  </div>
