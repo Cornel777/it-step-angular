@@ -20,7 +20,8 @@ export class ConferenceComponent implements OnInit {
   capacity: number
   participants: Array<Participant>
   passed: boolean
-
+  capacityLevel: string
+  
   constructor() { 
     this.capacity = 3;
     this.participants = new Array();
@@ -36,13 +37,15 @@ export class ConferenceComponent implements OnInit {
   }
 
   addParticipant(){
-    this.participants.push(new Participant())
+    if (this.participants.length == this.capacity) {
+      this.capacityLevel = 'full'
+    }  else if (this.participants.length > this.capacity * 0.5) {
+      this.capacityLevel = 'moderate'
+      this.participants.push(new Participant())
+    } else {
+      this.capacityLevel = 'free'
+      this.participants.push(new Participant())
+    } 
   }
-
-  // isInThePast(): boolean {
-  //   console.log(this.startingTime < new Date())
-  //   return this.startingTime < new Date()
-  // }
-
 }
 
