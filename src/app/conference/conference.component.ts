@@ -18,6 +18,12 @@ export class ConferenceComponent implements OnInit {
   startingTime: Date
   @Input()
   capacity: number
+  @Input()
+  isOdd?: boolean
+  @Input()
+  isFirst?: boolean
+  @Input()
+  isLast?: boolean
   participants: Array<Participant>
   passed: boolean
   capacityLevel: string
@@ -30,6 +36,7 @@ export class ConferenceComponent implements OnInit {
 
   ngOnInit(): void {
     this.passed = this.startingTime < new Date()
+    console.log('is odd', this.isOdd)
   }
 
   availableSeats(): String{
@@ -46,6 +53,12 @@ export class ConferenceComponent implements OnInit {
       this.capacityLevel = 'free'
       this.participants.push(new Participant())
     } 
+  }
+
+  cardStyle(){
+    if (this.isFirst) return "text-white bg-success"
+    if (this.isLast) return "text-white bg-dark"
+    if (this.isOdd) return "text-white bg-secondary"
   }
 }
 

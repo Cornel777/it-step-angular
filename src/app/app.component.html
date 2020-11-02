@@ -3,8 +3,9 @@
   Your event will start in {{time}} seconds
   <hr>
   <div class="row">
-    <app-conference *ngFor="let conf of conferences" [name]="conf.name" [description]="conf.description"
-      [location]="conf.location" [startingTime]="conf.startingTime" [capacity]=conf.capacity>
+    <app-conference *ngFor="let conf of conferences; odd as isOdd; first as isFirst; last as isLast" [name]="conf.name"
+      [description]="conf.description" [isOdd]="isOdd" [isFirst]="isFirst" [isLast]="isLast" [location]="conf.location"
+      [startingTime]="conf.startingTime" [capacity]=conf.capacity>
     </app-conference>
 
   </div>

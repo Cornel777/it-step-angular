@@ -1,16 +1,21 @@
 <div class="card">
   <!-- <img class="card-img-top" src="https://source.unsplash.com/random/200x200" alt="Card image cap"> -->
-  <div class="card-body">
+  <div class="card-body" [ngClass]='cardStyle()'>
     <h5 class="card-title">{{name}}</h5>
     <small>{{location}} - {{startingTime.toDateString()}} </small>
     <small>Starting time: {{startingTime.toTimeString()}} </small>
     <p class="card-text">{{description}}</p>
     <p>Seats available: {{availableSeats()}}</p>
-    <a class="btn btn-primary">Go somewhere</a>
+    <a class="btn btn-primary">Open details</a>
     <button class="btn btn-primary m-2" (click)="addParticipant()">+</button>
-    <div *ngIf="passed" class="alert alert-warning" role="alert">
+    <div *ngIf="passed; else currentEvent" class="alert alert-warning" role="alert">
       Event happened in the past
     </div>
+    <ng-template #currentEvent>
+      <div class="alert alert-info">
+        Event scheduled to happen
+      </div>      
+    </ng-template>
     <div [ngSwitch]="capacityLevel">
       <div *ngSwitchCase="'full'" class="alert alert-danger" role="alert">
         Conference full
@@ -18,7 +23,7 @@
       <div *ngSwitchCase="'moderate'" class="alert alert-warning" role="alert">
         Conference in high demand
       </div>
-      <div *ngSwitchDefault class="alert alert-info" role="alert">
+      <div *ngSwitchDefault class="alert alert-success" role="alert">
         Conference has enough places
       </div>
     </div>
