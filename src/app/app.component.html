@@ -1,11 +1,12 @@
 <div class="container">
   <h1>{{title}}</h1>
-  <hr>
-  <p>The next event will start in {{time}} seconds</p>
+  Your event will start in {{time}} seconds
   <hr>
   <div class="row">
-    <app-conference></app-conference>
-    <app-conference></app-conference>
+    <app-conference *ngFor="let conf of conferences; odd as isOdd; first as isFirst; last as isLast" [name]="conf.name"
+      [description]="conf.description" [isOdd]="isOdd" [isFirst]="isFirst" [isLast]="isLast" [location]="conf.location"
+      [startingTime]="conf.startingTime" [capacity]=conf.capacity>
+    </app-conference>
+
   </div>
-  
 </div>
