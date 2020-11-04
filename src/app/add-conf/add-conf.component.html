@@ -1,28 +1,26 @@
 <div class="col-6">
-    <form (submit)="addConference()">
-        <h2>New conference</h2>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="conference.name" name="name"
-                placeholder="Enter conference name">
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea type="text" class="form-control" id="description" [(ngModel)]="conference.description" name="description"
-                placeholder="Enter conference location"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="location">Location</label>
-            <input type="datetime" class="form-control" id="location" name="location" [(ngModel)]="conference.location">
-        </div>
-        <div class="form-group">
-            <label for="time">Starting time</label>
-            <input type="datetime-local" class="form-control" id="time" [(ngModel)]="conference.startingTime" name="startingTime">
-        </div>
-        <div class="form-group">
-            <label for="capacity">Capacity</label>
-            <input type="datetime" class="form-control" id="capacity" [(ngModel)]="conference.capacity" name="capacity">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <h2>New conference</h2>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="conference.name"
+            placeholder="Enter conference name">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="text" class="form-control" id="description" [(ngModel)]="conference.description"
+         placeholder="Enter conference location"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="datetime" class="form-control" id="location" [(ngModel)]="conference.location">
+    </div>
+    <div class="form-group">
+        <label for="time">Starting time</label>
+        <input type="datetime-local" class="form-control" id="time" [(ngModel)]="conference.startingTime">
+    </div>
+    <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <input type="datetime" class="form-control" id="capacity" [(ngModel)]="conference.capacity">
+    </div>
+    <button (click)="addConference()" class="btn btn-primary">Submit</button>
 </div>
