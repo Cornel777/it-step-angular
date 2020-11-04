@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ConferenceComponent } from './conference/conference.component';
+import { AddConfComponent } from './add-conf/add-conf.component';
 
 @NgModule({
   declarations: [
     AppComponent,  
-    ConferenceComponent
+    ConferenceComponent, AddConfComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

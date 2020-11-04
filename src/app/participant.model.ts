@@ -11,3 +11,11 @@ export class Participant implements IParticipant {
     age: number
     technologies: Array<String>
 }
+
+export class Conference {
+  name: String
+  description:String
+  location: String
+  startingTime: Date
+  capacity: number
+}

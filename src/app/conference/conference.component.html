@@ -2,8 +2,8 @@
   <!-- <img class="card-img-top" src="https://source.unsplash.com/random/200x200" alt="Card image cap"> -->
   <div class="card-body" [ngClass]='cardStyle()'>
     <h5 class="card-title">{{name}}</h5>
-    <small>{{location}} - {{startingTime.toDateString()}} </small>
-    <small>Starting time: {{startingTime.toTimeString()}} </small>
+    <small>{{location | uppercase}} - {{startingTime | date : 'shortDate'}} </small> <br/>
+    <small>Starting time: {{startingTime | date: 'shortTime'}} </small>
     <p class="card-text">{{description}}</p>
     <p>Seats available: {{availableSeats()}}</p>
     <a class="btn btn-primary">Open details</a>
