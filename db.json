@@ -1,0 +1,60 @@
+{
+  "conferences": [
+    {
+      "id": 1,
+      "name": "ngConf",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "location": "Amsterdam",
+      "startingTime": "2020-11-11T12:39",
+      "capacity": 100
+    },
+    {
+      "id": 2,
+      "name": "DevCamp",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "location": "Amsterdam",
+      "startingTime": "2020-11-11T12:39",
+      "capacity": 10
+    },
+    {
+      "id": 3,
+      "name": "WebSummit",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "location": "Porto",
+      "startingTime": "2020-11-11T12:39",
+      "capacity": 10
+    },
+    {
+      "id": 4,
+      "name": "WebSummit",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "location": "Porto",
+      "startingTime": "2020-11-11T12:39",
+      "capacity": 10
+    },
+    {
+      "name": "Some conf",
+      "description": "lalsdasdas dlasda ",
+      "location": "Bucuresti",
+      "startingTime": "2020-11-11T12:39",
+      "capacity": "10",
+      "id": 5
+    },
+    {
+      "name": "DevTalks",
+      "description": "asdasda",
+      "location": "Seattle",
+      "startingTime": "2020-11-12T12:45",
+      "capacity": "120",
+      "id": 6
+    },
+    {
+      "name": "new conf",
+      "description": "lasdsadasd a",
+      "location": "Bucharest",
+      "startingTime": "2020-11-24T13:47",
+      "capacity": "Bucuresti",
+      "id": 7
+    }
+  ]
+}

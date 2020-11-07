@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ConferenceComponent } from './conference/conference.component';
 import { AddConfComponent } from './add-conf/add-conf.component';
+import { HttpClientModule } from '@angular/common/http' 
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { AddConfComponent } from './add-conf/add-conf.component';
     ConferenceComponent, AddConfComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule,  HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Conference } from './participant.model';
-import {ConferenceService } from './service/conference.service'
+import { ConferenceService } from './service/conference.service'
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,13 @@ export class AppComponent {
   title = 'Conferences';
   time: number = 10_000;
   searchField: string
-  conferences: Array<Conference>
+  conferences: Conference[]
   isFormVisible = false
-  
+
   constructor(private conferenceService: ConferenceService) {
-    this.conferences = this.conferenceService.getAll()
+    this.conferenceService.getAll().subscribe(data => {
+      this.conferences = data
+    })
     let interval = setInterval(() => {
       this.time--
       if (this.time === 0) {
@@ -25,9 +27,17 @@ export class AppComponent {
     }, 1000)
   }
 
- search() {
-   this.conferences = this.conferenceService.search(this.searchField)
- }
+  search() {
+    if (this.searchField) {
+      this.conferenceService.search(this.searchField).subscribe(data => {
+        this.conferences = data
+      })
+    } else {
+      this.conferenceService.getAll().subscribe(data => {
+        this.conferences = data
+      })
+    }
+  }
 
   showForm() {
     this.isFormVisible = true;
@@ -35,6 +45,9 @@ export class AppComponent {
 
   addConf() {
     this.isFormVisible = false;
+    this.conferenceService.getAll().subscribe(data => {
+      this.conferences = data
+    })
   }
 
 }

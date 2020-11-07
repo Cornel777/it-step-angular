@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Conference } from '../participant.model';
-import {EventEmitter } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { ConferenceService } from '../service/conference.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class AddConfComponent implements OnInit {
 
   addConference() {
     this.conferenceService.addConf(this.conference)
-    this.emitter.emit();
+      .subscribe(() => this.emitter.emit());
   }
 
 }
