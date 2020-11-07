@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Conference } from '../participant.model';
 import {EventEmitter } from '@angular/core';
+import { ConferenceService } from '../service/conference.service';
 
 @Component({
   selector: 'app-add-conf',
@@ -10,16 +11,17 @@ import {EventEmitter } from '@angular/core';
 export class AddConfComponent implements OnInit {
 
   @Output()
-  emitter: EventEmitter<Conference> = new EventEmitter()
+  emitter: EventEmitter<void> = new EventEmitter()
   conference: Conference
-  constructor() { }
+  constructor(private conferenceService: ConferenceService) { }
 
   ngOnInit(): void {
     this.conference = new Conference();
   }
 
   addConference() {
-    this.emitter.emit(this.conference);
+    this.conferenceService.addConf(this.conference)
+    this.emitter.emit();
   }
 
 }
