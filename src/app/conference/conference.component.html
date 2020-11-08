@@ -6,7 +6,7 @@
     <small>Starting time: {{conference.startingTime | date: 'shortTime'}} </small>
     <p class="card-text">{{conference.description}}</p>
     <p>Seats available: {{availableSeats()}}</p>
-    <a class="btn btn-primary" [routerLink]="['conf', conference.id]" >Open details</a>
+    <a class="btn btn-primary" [routerLink]="[conference.id, 'details']" >Open details</a>
     <button class="btn btn-primary m-2" (click)="addParticipant()">+</button>
     <div *ngIf="passed; else currentEvent" class="alert alert-warning" role="alert">
       Event happened in the past

@@ -13,7 +13,10 @@ export class ConferenceService {
 
   search(searchField: string): Observable<Conference[]> {
     return this.http.get<Conference[]>(`${this.URL}?q=${searchField}`)
+  }
 
+  findById(id: string): Observable<Conference> {
+    return this.http.get<Conference>(`${this.URL}/${id}`)
   }
 
   getAll(): Observable<Conference[]> {

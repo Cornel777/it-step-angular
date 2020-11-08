@@ -7,11 +7,12 @@ import { AddConfComponent } from './add-conf/add-conf.component';
 import { HttpClientModule } from '@angular/common/http' 
 import { AppRoutingModule } from './routing/routing.module';
 import { ConferenceListComponent } from './conference-list/conference-list.component';
+import { ConferenceDetailsComponent } from './conference-details/conference-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,  
-    ConferenceComponent, AddConfComponent, ConferenceListComponent
+    ConferenceComponent, AddConfComponent, ConferenceListComponent, ConferenceDetailsComponent
   ],
   imports: [
     BrowserModule, FormsModule,  HttpClientModule, AppRoutingModule

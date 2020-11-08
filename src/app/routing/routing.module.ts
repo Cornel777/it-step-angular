@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'
 import {ConferenceListComponent } from '../conference-list/conference-list.component'
 import { AddConfComponent } from '../add-conf/add-conf.component';
+import { ConferenceDetailsComponent } from '../conference-details/conference-details.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddConfComponent
+  }, 
+  {
+    path: ':id/details',
+    component: ConferenceDetailsComponent
   }
 ]
 
