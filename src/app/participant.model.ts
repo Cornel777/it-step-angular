@@ -13,6 +13,7 @@ export class Participant implements IParticipant {
 }
 
 export class Conference {
+  id: number
   name: String
   description:String
   location: String

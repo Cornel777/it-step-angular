@@ -55,6 +55,14 @@
       "startingTime": "2020-11-24T13:47",
       "capacity": "Bucuresti",
       "id": 7
+    },
+    {
+      "name": "Some fancy conf",
+      "description": "yet another fancy conf",
+      "location": "Bucharest",
+      "startingTime": "2020-11-16T02:47",
+      "capacity": "120",
+      "id": 8
     }
   ]
 }

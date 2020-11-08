@@ -1,12 +1,12 @@
 <div class="card">
   <!-- <img class="card-img-top" src="https://source.unsplash.com/random/200x200" alt="Card image cap"> -->
   <div class="card-body" [ngClass]='cardStyle()'>
-    <h5 class="card-title">{{name}}</h5>
-    <small>{{location | uppercase}} - {{startingTime | date : 'shortDate'}} </small> <br/>
-    <small>Starting time: {{startingTime | date: 'shortTime'}} </small>
-    <p class="card-text">{{description}}</p>
+    <h5 class="card-title">{{conference.name}}</h5>
+    <small>{{conference.location | uppercase}} - {{conference.startingTime | date : 'shortDate'}} </small> <br/>
+    <small>Starting time: {{conference.startingTime | date: 'shortTime'}} </small>
+    <p class="card-text">{{conference.description}}</p>
     <p>Seats available: {{availableSeats()}}</p>
-    <a class="btn btn-primary">Open details</a>
+    <a class="btn btn-primary" [routerLink]="['conf', conference.id]" >Open details</a>
     <button class="btn btn-primary m-2" (click)="addParticipant()">+</button>
     <div *ngIf="passed; else currentEvent" class="alert alert-warning" role="alert">
       Event happened in the past

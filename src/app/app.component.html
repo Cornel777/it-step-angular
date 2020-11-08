@@ -2,21 +2,5 @@
   <h1>{{title}}</h1>
   Your event will start in {{time}} seconds
   <hr>
-  <div class="w-100">
-    <div class="form-group">
-      <label for="search-field">Search</label>
-      <input type="text" class="form-control" id="search-field" aria-describedby="emailHelp"
-        placeholder="Search for a conference" [(ngModel)]='searchField' (keyup)='search()'>
-    </div>
-  </div>
-  <div>
-    <button class="btn btn-primary" (click)="showForm()">Add conference</button>
-    <app-add-conf *ngIf="isFormVisible" (emitter)="addConf($event)"></app-add-conf>
-  </div>
-  <div class="row">
-    <app-conference *ngFor="let conf of conferences; odd as isOdd; first as isFirst; last as isLast"
-      [name]="conf.name" [description]="conf.description" [isOdd]="isOdd" [isFirst]="isFirst" [isLast]="isLast"
-      [location]="conf.location" [startingTime]="conf.startingTime" [capacity]=conf.capacity>
-    </app-conference>
-  </div>
+  <router-outlet></router-outlet>
 </div>

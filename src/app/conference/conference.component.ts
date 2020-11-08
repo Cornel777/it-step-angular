@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Participant} from '../participant.model';
+import { Conference, Participant} from '../participant.model';
 
 @Component({
   selector: 'app-conference',
@@ -9,15 +9,7 @@ import { Participant} from '../participant.model';
 export class ConferenceComponent implements OnInit {
 
   @Input()
-  name: String
-  @Input()
-  description:String
-  @Input()
-  location: String
-  @Input()
-  startingTime: Date
-  @Input()
-  capacity: number
+  conference: Conference
   @Input()
   isOdd?: boolean
   @Input()
@@ -29,24 +21,23 @@ export class ConferenceComponent implements OnInit {
   capacityLevel: string
   
   constructor() { 
-    this.capacity = 3;
     this.participants = new Array();
   
   }
 
   ngOnInit(): void {
-    this.passed = this.startingTime < new Date()
+    this.passed = this.conference.startingTime < new Date()
     console.log('is odd', this.isOdd)
   }
 
   availableSeats(): String{
-    return `${this.capacity - this.participants.length} / ${this.capacity}`
+    return `${this.conference.capacity - this.participants.length} / ${this.conference.capacity}`
   }
 
   addParticipant(){
-    if (this.participants.length == this.capacity) {
+    if (this.participants.length == this.conference.capacity) {
       this.capacityLevel = 'full'
-    }  else if (this.participants.length > this.capacity * 0.5) {
+    }  else if (this.participants.length > this.conference.capacity * 0.5) {
       this.capacityLevel = 'moderate'
       this.participants.push(new Participant())
     } else {

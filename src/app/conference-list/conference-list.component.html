@@ -1,0 +1,15 @@
+<div>
+    <div class="w-100">
+        <div class="form-group">
+          <label for="search-field">Search</label>
+          <input type="text" class="form-control" id="search-field" aria-describedby="emailHelp"
+            placeholder="Search for a conference" [(ngModel)]='searchField' (keyup)='search()'>
+        </div>
+      </div>
+    <button class="btn btn-primary" (click)="showForm()">Add conference</button>
+  </div>
+  <div class="row">
+    <app-conference *ngFor="let conf of conferences; odd as isOdd; first as isFirst; last as isLast"
+       [isOdd]="isOdd" [isFirst]="isFirst" [isLast]="isLast" [conference]="conf">
+    </app-conference>
+  </div>
